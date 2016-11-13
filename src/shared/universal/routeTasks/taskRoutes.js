@@ -24,6 +24,12 @@ function taskRoutes({ dispatch } : TaskRouteLocals) {
       prefetchData: ({ id } : { id: number }) => dispatch(PostActions.fetch(id)),
       // deferredData: () => new Promise(resolve => setTimeout(resolve, 2000)),
     },
+    {
+      pattern: '/about',
+      prefetchData: ({ id } : { id: number }) => dispatch(PostActions.fetch(id)),
+      // deferredData: () => new Promise(resolve => setTimeout(resolve, 2000)),
+    },
+
   ];
 }
 
