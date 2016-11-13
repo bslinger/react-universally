@@ -14,10 +14,10 @@ function fetched(post: Post) : Action {
 
 export function fetch(id: number) : ThunkAction {
   return (dispatch, getState, { axios }) => {
-    fetching(id);
-
-    return axios
-      .get(`https://jsonplaceholder.typicode.com/posts/${id}`)
-      .then(({ data }) => dispatch(fetched(data)));
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(1);
+      }, 1000);
+    }).then((id) => dispatch(fetched(id)))
   };
 }
